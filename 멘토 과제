@@ -1,0 +1,39 @@
+#include <stdio.h>
+
+void sum(int aray[5][5])
+{
+	int l;
+	for (int k = 1;k < 5; k++)
+	{
+		for (l = 1;l < 5;l++)
+
+		{
+			aray[k][l] = aray[0][l] + aray[k][0];
+		}
+	}
+	for (int a = 0;a < 5;a++)
+	{
+		for (int b = 0;b < 5;b++)
+		{
+			printf("%d  ", aray[a][b]);
+		}
+		printf("\n");
+	}
+}
+
+
+int main()
+{
+	int iaray[5][5];
+	int cnt = 1;
+	for (int i = 0; i < 5; i++)
+	{
+		iaray[i][0] = cnt;
+		iaray[0][i] = cnt;
+		cnt++;
+	}
+	sum(iaray);
+
+	return 0;
+
+}
